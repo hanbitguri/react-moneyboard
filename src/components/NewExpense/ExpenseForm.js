@@ -49,8 +49,11 @@ function ExpenseForm(props) {
     setEnterTitle('');
     setEnterNumber('');
     setEnterDate('');
+    props.toggling(false)
  }
+
   return (
+    
     <form action="" onSubmit={submitHandler}>
         <div className='new-expense__controls'>
             <div className="new-expense__control">
@@ -63,10 +66,13 @@ function ExpenseForm(props) {
             </div>
             <div className="new-expense__control">
                 <label>Date</label>
-                <input type="date"value={enterDate} min="2022-10-22" max="2022-12-31" onChange={dateChangeHandler}/>
+                <input type="date"value={enterDate} min="2019-10-22" max="2022-12-31" onChange={dateChangeHandler}/>
             </div>
         </div>
         <div className='new-expense__actions'>
+            <button type='button' onClick={()=>{
+                props.toggling(false)
+            }}>Cansel</button>
             <button type='submit'>Add Expense</button>
         </div>
     </form>

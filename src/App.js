@@ -37,12 +37,17 @@ function App() {
       return [expense,...prevExpenses]
     });
   }
+
+ 
   return (
     <div>
       <NewExpense onAddExpense={addExpense}></NewExpense>
+      
       <Expenses expenses={expenses}/>
     </div>
   );
 }
+
+
 
 export default App;
